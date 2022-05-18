@@ -4,6 +4,8 @@ upload .dll files with GitLFS
 
 Repository setup:
 
+Open command prompt in the HMM/hmm directory
+
 Git for Windows: https://gitforwindows.org/
 
 After installing Git, to download the repo locally: git clone https://github.com/SlashRobotics/Honeysuckle-Meadery
