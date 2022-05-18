@@ -4,7 +4,7 @@ upload .dll files with GitLFS
 
 Repository setup:
 
-Open command prompt in the HMM/hmm directory
+Open command prompt in the hmm/HMM directory
 
 Git for Windows: https://gitforwindows.org/
 
