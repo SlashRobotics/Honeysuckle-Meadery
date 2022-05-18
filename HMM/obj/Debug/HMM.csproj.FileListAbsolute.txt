@@ -1,0 +1,16 @@
+C:\Users\akl03\Desktop\hmm\HMM\HMM\bin\Debug\HMM.exe.config
+C:\Users\akl03\Desktop\hmm\HMM\HMM\bin\Debug\HMM.exe
+C:\Users\akl03\Desktop\hmm\HMM\HMM\bin\Debug\HMM.pdb
+C:\Users\akl03\Desktop\hmm\HMM\HMM\obj\Debug\HMM.csproj.AssemblyReference.cache
+C:\Users\akl03\Desktop\hmm\HMM\HMM\obj\Debug\HMM.csproj.SuggestedBindingRedirects.cache
+C:\Users\akl03\Desktop\hmm\HMM\HMM\obj\Debug\HMM.LoginForm.resources
+C:\Users\akl03\Desktop\hmm\HMM\HMM\obj\Debug\HMM.Properties.Resources.resources
+C:\Users\akl03\Desktop\hmm\HMM\HMM\obj\Debug\HMM.csproj.GenerateResource.cache
+C:\Users\akl03\Desktop\hmm\HMM\HMM\obj\Debug\HMM.csproj.CoreCompileInputs.cache
+C:\Users\akl03\Desktop\hmm\HMM\HMM\obj\Debug\HMM.exe
+C:\Users\akl03\Desktop\hmm\HMM\HMM\obj\Debug\HMM.pdb
+C:\Users\akl03\Desktop\hmm\HMM\HMM\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.dll
+C:\Users\akl03\Desktop\hmm\HMM\HMM\bin\Debug\Bunifu.Licensing.dll
+C:\Users\akl03\Desktop\hmm\HMM\HMM\obj\Debug\HMM.exe.config
+C:\Users\akl03\Desktop\hmm\HMM\HMM\obj\Debug\HMM.exe.licenses
+C:\Users\akl03\Desktop\hmm\HMM\HMM\obj\Debug\HMM.csproj.CopyComplete
