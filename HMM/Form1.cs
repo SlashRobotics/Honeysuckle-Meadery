@@ -36,6 +36,17 @@ namespace HMM
         public LoginForm()
         {
             InitializeComponent();
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.AutoPopDelay = 500;
+            toolTip1.InitialDelay = 500;
+            toolTip1.ReshowDelay = 500;
+            toolTip1.ShowAlways = true;
+            toolTip1.SetToolTip(this.zooBtn, "Zoom In");
+            toolTip1.SetToolTip(this.zoomOutBtn, "Zoom Out");
+            if (Properties.Settings.Default.SalesTax != 0) // 0 is default
+            {
+                salesTaxTB.Text = Properties.Settings.Default.SalesTax.ToString();
+            }
             this.Height = 500;
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
@@ -155,8 +166,7 @@ namespace HMM
                     websiteBtn.Visible = true;
                     inventoryBtn.Visible = true;
                     salesBtn.Visible = true;
-                    zooBtn.Visible = true;
-                    zoomOutBtn.Visible = true;
+                    dashboardBtn.Visible = true;                   
                     welcomeLabel.Visible = true;
                     welcomeLabel.Text = $"Welcome: {UsernameTB.Text}";
                     loadingLabel.Visible = true;
@@ -231,6 +241,7 @@ namespace HMM
 
         private void websiteBtn_Click(object sender, EventArgs e)
         {
+            chromeBrowser.Load("https://akl032.wixsite.com/my-site");
             inventoryPanel.Visible = false;
             websitePanel.Visible = true;
             salesPanel.Visible = false;
@@ -644,11 +655,24 @@ namespace HMM
 
         private void salesInsertItemBtn_Click(object sender, EventArgs e)
         {
+            if(salesPriceTB.Text == "Price" 
+                || salesPriceTB.Text == "" 
+                || salesNameTB.Text == "Name" 
+                || salesNameTB.Text == ""
+                || salesAmountTB.Text == "Amount" 
+                || salesAmountTB.Text == "" 
+                || salesTaxTB.Text == "Sales tax" 
+                || salesTaxTB.Text == "")
+            {
+                MessageBox.Show("Please fill all required fields");
+                return;
+            }
             string inventoryName = "N/A";
             string inventoryAmount = "N/A";
             string inventoryPrice = "0.00";
             string inventoryID = "N/A";
             double grossCollected = 0.00;
+            double salesTax = 0.00;
             double tax = 0.00;
             DateTime iDate;
             iDate = InventoryDatePicker.Value;
@@ -668,11 +692,14 @@ namespace HMM
             if (salesIDTB.Text != "ID")
             {
                 inventoryID = salesIDTB.Text;
-            }
+            }           
             try
             {
+                salesTax = Convert.ToDouble(salesTaxTB.Text);
+                Properties.Settings.Default.SalesTax = salesTax;
+                Properties.Settings.Default.Save();
                 grossCollected = Convert.ToDouble(inventoryAmount) * Convert.ToDouble(inventoryPrice);
-                tax = grossCollected * (6.5 / 100);
+                tax = grossCollected * (salesTax / 100);
             }
             catch (Exception)
             {
@@ -818,6 +845,9 @@ namespace HMM
             {
                 HandleZoomLevel();
             }
+            dashboardBtn.Enabled = true;
+            zooBtn.Visible = true;
+            zoomOutBtn.Visible = true;
         }
         private void loadingTimer_Tick(object sender, EventArgs e)
         {
@@ -828,6 +858,41 @@ namespace HMM
                 loadingLabel.Visible = false;
                 HandleZoomLevel();
             }              
+        }
+
+        private void salesTaxTB_Click(object sender, EventArgs e)
+        {
+            if(salesTaxTB.Text == "Sales tax")
+            {
+                salesTaxTB.Text = "";
+            }
+        }
+
+        private void salesTaxTB_Leave(object sender, EventArgs e)
+        {
+            if (salesTaxTB.Text == "")
+            {
+                salesTaxTB.Text = "Sales tax";
+            }
+        }
+
+        private void dashboardBtn_Click(object sender, EventArgs e)
+        {
+            chromeBrowser.Load("https://manage.wix.com/dashboard/c602245f-910f-4eb9-bc2b-9f6d1c3a21b0/home");
+        }
+
+        private void salesTaxTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -100,3 +100,6 @@ C:\Users\akl03\Desktop\hmm\HMM\HMM\obj\x64\Debug\HMM.csproj.CoreCompileInputs.ca
 C:\Users\akl03\Desktop\hmm\HMM\HMM\obj\x64\Debug\HMM.csproj.CopyComplete
 C:\Users\akl03\Desktop\hmm\HMM\HMM\obj\x64\Debug\HMM.exe
 C:\Users\akl03\Desktop\hmm\HMM\HMM\obj\x64\Debug\HMM.pdb
+C:\Users\akl03\Desktop\hmm\HMM\HMM\bin\x64\Debug\HtmlAgilityPack.dll
+C:\Users\akl03\Desktop\hmm\HMM\HMM\bin\x64\Debug\HtmlAgilityPack.pdb
+C:\Users\akl03\Desktop\hmm\HMM\HMM\bin\x64\Debug\HtmlAgilityPack.xml

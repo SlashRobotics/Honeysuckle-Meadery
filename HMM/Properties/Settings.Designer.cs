@@ -22,5 +22,17 @@ namespace HMM.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double SalesTax {
+            get {
+                return ((double)(this["SalesTax"]));
+            }
+            set {
+                this["SalesTax"] = value;
+            }
+        }
     }
 }
