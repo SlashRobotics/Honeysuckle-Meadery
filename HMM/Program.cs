@@ -21,7 +21,7 @@ namespace HMM
                 System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
                 //startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startInfo.FileName = "cmd.exe";
-                startInfo.Arguments = "/C rd /s /q \"C:\\Program Files\\Honeysuckle-Meadery\"&/C cd C:\\Program Files&git clone https://github.com/SlashRobotics/Honeysuckle-Meadery";
+                startInfo.Arguments = "/C rd /s /q \"C:\\Program Files\\Honeysuckle-Meadery\"&/C cd C:\\Program Files&git clone https://github.com/SlashRobotics/HMMUpdates";
                 process.StartInfo = startInfo;
                 process.StartInfo.Verb = "runas";
                 startInfo.WorkingDirectory = @"C:\\Program Files";               
@@ -32,7 +32,7 @@ namespace HMM
                 var url = "https://github.com/SlashRobotics/Honeysuckle-Meadery/blob/main/HMM/Properties/AssemblyInfo.cs";
                 var web = new HtmlWeb();
                 var doc = web.Load(url);
-                if ((doc.DocumentNode.InnerHtml.ToString().Contains("[assembly: AssemblyVersion(\"1.0.0.0\")]")))
+                if (!(doc.DocumentNode.InnerHtml.ToString().Contains("[assembly: AssemblyVersion(\"1.0.0.0\")]")))
                 {
 
                 }
