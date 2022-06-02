@@ -1,4 +1,4 @@
-GitLFS Quota Reached! Wait until 6/13/2022 for final update to be uploaded when quota resets
+**GitLFS Quota Reached! Wait until 6/13/2022 for final update to be uploaded when quota resets**
 
 Refer to x64 debug build.
 
