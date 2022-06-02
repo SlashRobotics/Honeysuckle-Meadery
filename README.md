@@ -16,6 +16,8 @@ To update the repository install Git LFS: git lfs install
 
 Add the file extensions for large files over 100mb to track: git lfs track "*.dll"
 
+Make sure repo is up to date, if not try to push before adding more: git pull --all
+
 Add all files to the history: git add *
 
 Commit the files: git commit -m "first commit"
@@ -28,4 +30,4 @@ Finally push the files to the repository on the main branch: git push -u origin 
 
 You should see an "Uploading LFS objects" first then the other files will follow.
 
-You may have to pull: git pull -all, or reset: git reset/git reset --hard (removes history), to make a push.
+You may have to pull: git pull --all, or reset: git reset/git reset --hard (removes history), to make a push.
